@@ -1,0 +1,29 @@
+{
+  "name": "dojo-react",
+  "version": "1.0.0",
+  "description": "IEBT Dojo - React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcosheleno/dojo-react.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcosheleno/dojo-react/issues"
+  },
+  "homepage": "https://github.com/marcosheleno/dojo-react#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "typescript": "^4.5.5"
+  }
+}
