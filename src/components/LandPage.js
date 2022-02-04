@@ -8,7 +8,7 @@ export default function LandPage(props) {
       <div class="content">
 
         <h1>
-          <Hello name={props.salut} />
+          <Hello />
         </h1>
         <h1>Bem vindo ao Dojo React IEBT</h1>
         <p>Nosso desafio hoje é criar um chat com nossos contatos</p>
