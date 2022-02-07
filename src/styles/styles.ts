@@ -27,8 +27,6 @@ export const NoDots = styled.ul`
 
 export const OverflowedParagraph = styled.p`
   white-space: nowrap;
-  width: 100%;
   overflow: hidden;
-
   text-overflow: ellipsis;
 `;

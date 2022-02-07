@@ -19,13 +19,13 @@ export const ContentWraper = styled.div`
 `;
 
 export const LeftWraper = styled.div`
-  flex:3;
   flex-direction: column;
+  width: 80%;
 `;
 
 export const PhoneWrapper = styled.div`
   display: flex;
-  flex:1;
+  width: 20%;
   flex-direction:column;
 `
 
