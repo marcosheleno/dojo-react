@@ -1,0 +1,50 @@
+[
+    {
+        "id": 10,
+        "nome": "João das Neves",
+        "grupos": [
+            "familia neves"
+        ],
+        "telefones": [
+            {
+                "numero": 456465456,
+                "ddi": 55,
+                "tipo": "residencial"
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "nome": "Branc de Neves",
+        "grupos": [
+            "familia neves"
+        ],
+        "telefones": [
+            {
+                "numero": 56498412398,
+                "ddi": 1,
+                "tipo": "celular"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "nome": "Abominável Homem das Neves",
+        "grupos": [
+            "familia neves"
+        ],
+        "emails": [
+            {
+                "email": "abominavel.homem.neves@familia.snow",
+                "tipo": "comercial"
+            }
+        ],
+        "telefones": [
+            {
+                "numero": 54516885,
+                "ddi": 55,
+                "tipo": "fax"
+            }
+        ]
+    }
+]
