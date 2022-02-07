@@ -1,4 +1,5 @@
 import React from 'react';
+import Contact from '../../models/contact';
 
 import {
     Card,
@@ -20,19 +21,7 @@ const mockData = [
     {
         id: 10,
         nome: 'Abominável Homem das Neves',
-        grupos: [
-            'familia neves',
-            'familia neves',
-            'familia neves',
-            'familia neves',
-            'familia neves',
-            'familia neves',
-            'familia neves',
-            'familia neves',
-            'familia neves',
-            'familia neves',
-            'familia neves',
-            'familia neves',
+        group: [
             'familia neves',
             'familia neves',
             'familia neves',
@@ -65,26 +54,31 @@ const mockData = [
 const getEmailString = (email: any) => `${email.email} (${email.tipo})`;
 
 const getPhoneString = (phone: any) =>
-    `${phone.tipo}: +${phone.ddi} ${phone.numero}`;
+    `${phone.tipo}: + ${phone.ddi} ${phone.numero}`;
 
-export default function ContactsPage() {
-    return mockData.length > 0 ? (
+export default function ContactsPage(mockData?:Array<Contact>) {
+    
+    if(!mockData || !mockData.length){
+        return <div>Sem contatos</div>
+    }
+    
+    return mockData ? (
         <>
             <section>
-                {mockData.map((contact) => {
+                {/* {mockData.map((contact) => {
                     const emails = contact.emails.map(getEmailString);
 
-                    const groupsString = contact.grupos.join(', ');
+                    const groupsString = contact.group.join(', ');
                     const emailsString = emails.join(', ');
 
                     return (
                         <Card>
-                            <H1>{contact.nome}</H1>
+                            <H1 data-testid = "nome">Ola, {contact.name}</H1>
                             <ContentWraper>
                                 <LeftWraper>
-                                    {contact.grupos.length > 0 ? (
+                                    {contact.group.length > 0 ? (
                                         <div>
-                                            <H2>Grupos</H2>
+                                            <H2>group</H2>
                                             <OverflowedParagraph>
                                                 {groupsString}
                                             </OverflowedParagraph>
@@ -93,7 +87,7 @@ export default function ContactsPage() {
                                         <></>
                                     )}
 
-                                    {contact.grupos.length > 0 ? (
+                                    {contact.group.length > 0 ? (
                                         <div>
                                             <H2>Emails</H2>
                                             <OverflowedParagraph>
@@ -118,7 +112,8 @@ export default function ContactsPage() {
                             </ContentWraper>
                         </Card>
                     );
-                })}
+                })} */}
+                asasass
             </section>
         </>
     ) : (
