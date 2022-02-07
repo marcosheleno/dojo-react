@@ -1,14 +1,13 @@
 import React from "react";
-import Hello from "./Hello";
-import Contacts from "./Contacts";
+import Hello from "../Hello/Component";
+import Contacts from "../Contacts/Component";
 
-export default function LandPage(props) {
+export default function LandPage() {
   return (
     <>
-      <div class="content">
-
+      <div>
         <h1>
-          <Hello />
+          <Hello name="stranger" />
         </h1>
         <h1>Bem vindo ao Dojo React IEBT</h1>
         <p>Nosso desafio hoje é criar um chat com nossos contatos</p>
