@@ -7,6 +7,6 @@ const data:Contact = {};
 const initialState = data;
 
 
-const contactReducer = (state = initialState, action) =>{
+// const contactReducer = (state = initialState, action) =>{
     
-}
+// }
