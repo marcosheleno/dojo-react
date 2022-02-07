@@ -2,9 +2,6 @@ import React from 'react';
 
 import { Card, Number, PhoneWrapper, ContentWraper } from './styles';
 import { Column, Paragraph, H1, H2, NoDots } from '../../styles/styles';
-import data from '../../../data/contacts.json'
-
-console.log(data);
 
 export default function ContactsPage() {
     return (
