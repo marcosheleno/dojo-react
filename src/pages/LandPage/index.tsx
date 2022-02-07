@@ -26,15 +26,19 @@ export default function LandPage() {
           <input type="checkbox" /> Criar a lista de contatos com todos os dados disponíveis<br />
           <input type="checkbox" /> Mudar para a tela de mensagens quando clicar na lista<br />
           <input type="checkbox" /> Manter as conversas e seus estados <i>na memória do navegador</i><br />
-          <input type="checkbox" /> Testar unitáriamente os componentes criados<br />
+          <input type="checkbox" /> Testar automaticamente os componentes criados<br />
           <input type="checkbox" /> E uma surpresa a mais... <br />
         </p><br />
         <p>Já estão nos requires do <i>package.json</i>
           <ul>
-            <li>React ^17.0.2</li>
-            <li>React Dom ^17.0.2</li>
-            <li>Jest ^27.4.7</li>
-            <li>Express ^4.17.2</li>
+            <li>react ^17.0.2</li>
+            <li>react-dom ^17.0.2</li>
+            <li>react-redux ^7.2.6</li>
+            <li>react-scripts 5.0.0</li>
+            <li>redux ^4.1.2</li>
+            <li>redux-thunk ^2.4.1</li>
+            <li>styled-components ^5.3.3</li>
+            <li>typescript ^4.5.5</li>
           </ul>
         </p><br />
         <p>
