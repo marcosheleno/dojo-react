@@ -1,4 +1,12 @@
-import actions, * from './actions';
-import * from './reducers';
+import { createStore} from 'redux'
+import Contact from '../../models/contact'
 
-export actions, reducers;
+const data:Contact = {};
+
+
+const initialState = data;
+
+
+const contactReducer = (state = initialState, action) =>{
+    
+}
