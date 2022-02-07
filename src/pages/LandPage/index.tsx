@@ -41,6 +41,9 @@ export default function LandPage() {
             <li>typescript ^4.5.5</li>
           </ul>
         </p><br />
+        <p>Para fazer o clone da aplicação acesse
+          <a href="https://github.com/marcosheleno/dojo-react">https://github.com/marcosheleno/dojo-react</a>
+        </p>
         <p>
           <h3>Regras do DOJO</h3>
           <ol>
