@@ -2,9 +2,12 @@ import React from 'react';
 import ContactsPage from './pages/ContactsPage';
 import LandPage from './pages/LandPage';
 function App() {
-  return (
-    <ContactsPage />
-  );
+    return (
+        <>
+            <ContactsPage />
+            <LandPage />
+        </>
+    );
 }
 
 export default App;
