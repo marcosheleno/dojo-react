@@ -1,6 +1,6 @@
 import React from "react";
-import Hello from "../Hello/Component";
-import Contacts from "../Contacts/Component";
+import Hello from "../../components/Hello";
+import Contacts from "../../components/Contacts";
 
 export default function LandPage() {
   return (

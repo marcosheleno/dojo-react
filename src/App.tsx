@@ -1,5 +1,5 @@
 import React from 'react';
-import LandPage from './components/LandPage/Component';
+import LandPage from './pages/LandPage';
 function App() {
   return (
     <LandPage />

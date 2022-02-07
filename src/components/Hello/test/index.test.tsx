@@ -1,6 +1,6 @@
 import {render, screen} from "@testing-library/react";
 import '@testing-library/jest-dom'
-import Hello from "../Component"
+import Hello from ".."
 
 it('should present a message when no name is set', () => {
   render(<Hello />);
