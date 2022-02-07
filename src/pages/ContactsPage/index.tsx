@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Card, Number, PhoneWrapper, ContentWraper } from './styles';
-import { Column, Paragraph, H1, H2, NoDots } from '../../styles/styles';
+import { Card, Number, PhoneWrapper, ContentWraper, LeftWraper } from './styles';
+import { Column, Paragraph, H1, H2, NoDots, OverflowedParagraph } from '../../styles/styles';
 
 const mockData = [
     {
@@ -12,6 +12,19 @@ const mockData = [
             'familia neves',
             'familia neves',
             'familia neves',
+            'familia neves',
+            'familia neves',
+            'familia neves',
+            'familia neves',
+            'familia neves',
+            'familia neves',
+            'familia neves',
+            'familia neves',
+            'familia neves',
+            'familia neves',
+            'familia neves',
+            'familia neves',
+            
         ],
         emails: [
             {
@@ -34,18 +47,14 @@ export default function ContactsPage() {
         <>
             <section>
                 {mockData.map((contact) => {
-
-                    const slicedGroups = contact.grupos.slice(0,2);
-                    let groupsString = slicedGroups.join(', ');
-                    if(slicedGroups.length < contact.grupos.length){
-                        groupsString += '...';
-                    }
+                    let groupsString = contact.grupos.join(', ');
+            
 
                     return (
                         <Card>
                             <H1>{contact.nome}</H1>
                             <ContentWraper>
-                                <Column>
+                                <LeftWraper>
                                     {contact.grupos.length > 0 ? (
                                         <div>
                                             <H2>Grupos</H2>
@@ -61,12 +70,12 @@ export default function ContactsPage() {
 
                                     <div>
                                         <H2>Emails</H2>
-                                        <Paragraph>
+                                        <OverflowedParagraph>
                                             ahsuhsuh@gmail.com,
-                                            mail@example.com...
-                                        </Paragraph>
+                                            mail@example.com
+                                        </OverflowedParagraph>
                                     </div>
-                                </Column>
+                                </LeftWraper>
                                 <PhoneWrapper>
                                     <H2>Telefones</H2>
                                     <NoDots>
