@@ -1,5 +1,5 @@
 import React from 'react';
-import ContactsPage from './pages/ContactsPage/ContactsPage';
+import ContactsPage from './pages/ContactsPage';
 import LandPage from './pages/LandPage';
 function App() {
   return (
