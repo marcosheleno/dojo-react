@@ -1,7 +1,10 @@
 import React from 'react';
 
 import { Card, Number, PhoneWrapper, ContentWraper } from './styles';
-import { Column, Paragraph, H1, H2 } from '../../styles/styles';
+import { Column, Paragraph, H1, H2, NoDots } from '../../styles/styles';
+import data from '../../../data/contacts.json'
+
+console.log(data);
 
 export default function ContactsPage() {
     return (
@@ -26,10 +29,10 @@ export default function ContactsPage() {
                         </Column>
                         <PhoneWrapper>
                             <H2>Telefones</H2>
-                            <ul>
+                            <NoDots>
                                 <Number>residencial: +55 191919191</Number>
                                 <Number>celular: +55 191919191</Number>
-                            </ul>
+                            </NoDots>
                         </PhoneWrapper>
                     </ContentWraper>
                 </Card>
