@@ -1,45 +1,33 @@
 import React from "react";
 
-import {Card, Title, FamilyGroup, Number, ListWrapper}  from './styles'
+import { Card, Title, FamilyGroup, Number, PhoneWrapper, ContentWraper, Email } from "./styles";
 
 export default function ContactsPage() {
   return (
     <>
-        <section>
-            <Card>
-                <Title>Fulano de Tal</Title>
-                <ListWrapper>
-                    Grupos
-                    <ul>
-                        <FamilyGroup>Família</FamilyGroup>
-                    </ul>
-                </ListWrapper>
-                <ListWrapper>
-                    <Number>+55 191919191 (residencial)</Number>
-                </ListWrapper>
-            </Card>
-            <Card>
-                <Title>Fulano de Tal</Title>
-                <ListWrapper>
-                    Grupos
-                    <ul>
-                        <FamilyGroup>Família</FamilyGroup>
-                    </ul>
-                </ListWrapper>
-                <Number>+55 191919191 (residencial)</Number>
-            </Card>
-            <Card>
-                <Title>Fulano de Tal</Title>
-                <ListWrapper>
-                    Grupos
-                    <ul>
-                        <FamilyGroup>Família</FamilyGroup>
-                        <FamilyGroup>Amigos</FamilyGroup>
-                    </ul>
-                </ListWrapper>
-                <Number>+55 191919191 (residencial)</Number>
-            </Card>
-        </section>
+      <section>
+        <Card>
+          <Title>Fulano de Tal</Title>
+          <ContentWraper>
+            <div>
+              Grupos
+              <p>
+                <FamilyGroup>Família</FamilyGroup>
+              </p>
+            </div>
+            <div>
+                Emails
+                <p>
+                    <Email>ahsuhsuh@gmail.com</Email>
+                </p>
+            </div>
+            <PhoneWrapper>
+              <Number>+55 191919191 (residencial)</Number>
+            </PhoneWrapper>
+          </ContentWraper>
+        </Card>
+        
+      </section>
     </>
   );
 }
