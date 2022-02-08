@@ -30,7 +30,7 @@ it('should present a message when contact has only name and id', () => {
     expect(contacts).toBeInTheDocument();
 });
 
-it('PhoneWrapper should be empty if there is no phone numbers', () => {
+it('PhoneWrapper should be empty if contact has no phone numbers', () => {
     const mockContact: Contact = { id: 1, name: 'Contato teste' };
 
     render(<Card contact={mockContact} />);
@@ -48,5 +48,23 @@ it('PhoneWrapper must contain phone numbers when they exist', () => {
     render(<Card contact={mockContact} />);
     
     const contact1 = screen.getByText('celular +55 19999999999');
+    expect(contact1).toBeInTheDocument();
+});
+
+it('Groups should be empty if contact has no groups', () => {
+    const mockContact: Contact = { id: 1, name: 'Contato teste' };
+
+    render(<Card contact={mockContact} />);
+    
+    const phonesParent = screen.getByText('Grupos').parentElement;
+    expect(phonesParent?.childElementCount).toBeLessThan(2);
+});
+
+it('LeftWrapper must contain comma separated groups when they exist', () => {
+    const mockContact: Contact = { id: 1, name: 'Contato teste', group: ["familia", "trabalho"] };
+
+    render(<Card contact={mockContact} />);
+    
+    const contact1 = screen.getByText('familia, trabalho');
     expect(contact1).toBeInTheDocument();
 });

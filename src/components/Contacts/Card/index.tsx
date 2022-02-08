@@ -9,6 +9,12 @@ import {
     Number,
 } from './styles';
 
+// const getEmailString = (email: any) => `${email.email} (${email.tipo})`;
+
+// const emails = contact.emails.map(getEmailString);
+// const emailsString = emails.join(', ');
+
+
 export const Card: React.FC<{ contact: Contact }> = ({ contact }) => {
     if (!contact.name || !contact.id) {
         return (
@@ -25,10 +31,12 @@ export const Card: React.FC<{ contact: Contact }> = ({ contact }) => {
                 <LeftWraper>
                     (
                     <div>
-                        <H2>group</H2>
-                        <OverflowedParagraph>
-                            Grupo 1, Grupo 2
-                        </OverflowedParagraph>
+                        <H2>Grupos</H2>
+                        {contact.group && (
+                            <OverflowedParagraph>
+                                {contact.group.join(', ')}
+                            </OverflowedParagraph>
+                        )}
                     </div>
                     <div>
                         <H2>Emails</H2>
@@ -40,7 +48,11 @@ export const Card: React.FC<{ contact: Contact }> = ({ contact }) => {
                     {contact.phones && (
                         <NoDots>
                             {contact.phones.map((phone) => {
-                                return <Number>{phone.type} +{phone.ddi} {phone.phone}</Number>       
+                                return (
+                                    <Number>
+                                        {phone.type} +{phone.ddi} {phone.phone}
+                                    </Number>
+                                );
                             })}
                         </NoDots>
                     )}
