@@ -47,6 +47,6 @@ it('PhoneWrapper must contain phone numbers when they exist', () => {
 
     render(<Card contact={mockContact} />);
     
-    const contact1 = screen.getByText('celular');
+    const contact1 = screen.getByText('celular +55 19999999999');
     expect(contact1).toBeInTheDocument();
 });

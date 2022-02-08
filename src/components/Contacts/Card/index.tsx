@@ -39,7 +39,9 @@ export const Card: React.FC<{ contact: Contact }> = ({ contact }) => {
                     <H2>Telefones</H2>
                     {contact.phones && (
                         <NoDots>
-                            <Number>celular: +55 191919191</Number>
+                            {contact.phones.map((phone) => {
+                                return <Number>{phone.type} +{phone.ddi} {phone.phone}</Number>       
+                            })}
                         </NoDots>
                     )}
                 </PhoneWrapper>
