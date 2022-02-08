@@ -78,5 +78,3 @@ it('should present a list of 2 contacts', () => {
     const contact2 = screen.getByText('Chico Cunha');
     expect(contact2).toBeInTheDocument();
 });
-
-
