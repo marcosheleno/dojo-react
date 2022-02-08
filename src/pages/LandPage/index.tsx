@@ -1,6 +1,6 @@
 import React from "react";
 import Hello from "../../components/Hello";
-import Contacts from "../../components/Contacts";
+import ContactsList from "../../components/Contacts";
 
 export default function LandPage() {
   return (
@@ -57,7 +57,7 @@ export default function LandPage() {
             <li>Cada dúvida tem limite de 5 minutos</li>
           </ol>
         </p>
-        <Contacts />
+        <ContactsList />
 
         <div>
           <p>Links de apoio:

@@ -1,8 +1,13 @@
+import Contact from "../../models/contact";
 
-const Contacts = () => {
-    return <div>
-        <p>Sua lista de contatos vem aqui.</p>
-    </div>;
+const ContactsList = ({ contacts }: { contacts?: Contact[] }) => {
+    return (
+        
+    <div>
+        <p data-testid="contacts">Nenhum contato encontrado</p>
+    </div>
+
+    );
 }
 
-export default Contacts
+export default ContactsList
