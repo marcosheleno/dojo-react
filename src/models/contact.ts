@@ -5,8 +5,8 @@ interface Phone {
 }
 
 interface Email{
-    email:string
-    tipo: string
+    email?:string
+    tipo?: string
 }
 
 interface Contact {

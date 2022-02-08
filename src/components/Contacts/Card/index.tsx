@@ -1,15 +1,18 @@
+import React, { Props } from 'react';
+import Contact from '../../../models/contact';
+import { Card as CardStyle } from './styles';
 
-export function Card = () => {
-    return(
-        <Card>
-            <H1 data-testid = "nome">Ola, {contact.name}</H1>
-                <ContentWraper>
-                    <LeftWraper />
-                                    
-                    <PhoneWrapper/>
-                                    
-                                    
-                </ContentWraper>
-        </Card>
-    )
-}
+export const Card: React.FC<{ contact: Contact }> = ({ contact }) => {
+    if (!contact.name || !contact.id) {
+        return (
+            <span>
+                <p>Contato inválido</p>
+            </span>
+        );
+    }
+    return (
+        <CardStyle>
+            <p>{contact.name}</p>
+        </CardStyle>
+    );
+};
