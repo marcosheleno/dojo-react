@@ -65,7 +65,7 @@ export default function ContactsPage(mockData?:Array<Contact>) {
     return mockData ? (
         <>
             <section>
-                {/* {mockData.map((contact) => {
+                {mockData.map((contact) => {
                     const emails = contact.emails.map(getEmailString);
 
                     const groupsString = contact.group.join(', ');
@@ -112,7 +112,7 @@ export default function ContactsPage(mockData?:Array<Contact>) {
                             </ContentWraper>
                         </Card>
                     );
-                })} */}
+                })}
                 asasass
             </section>
         </>
