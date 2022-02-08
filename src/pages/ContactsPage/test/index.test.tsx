@@ -9,7 +9,7 @@ it('when no contacts are provided, present "Nenhum contato encontrado" error', (
 
     expect(contacts).toBeInTheDocument();
     expect(contacts).toHaveTextContent('Nenhum contato encontrado');
-    // expect(contacts).toContainHTML('<h1 data-testid="nome">Ola, </h1>');
+    expect(contacts).toContainHTML('<p data-testid="contacts">Nenhum contato encontrado</p>');
 });
 
 it('should present a message when contact has no id', () => {
@@ -24,6 +24,9 @@ it('should present a message when contact has no id', () => {
 
     const contacts = screen.getByText('Contato inválido');
     expect(contacts).toBeInTheDocument();
+
+    const content = screen.getByText('Contato inválido').parentElement
+    expect(content?.tagName).toBe("ARTICLE")
 });
 
 it('should present a message when contact has no name', () => {
@@ -38,6 +41,7 @@ it('should present a message when contact has no name', () => {
     
     const contacts = screen.getByText('Contato inválido');
     expect(contacts).toBeInTheDocument();
+    expect(contacts).toContainHTML('<p>Contato inválido</p>');
 });
 
 it('should present a message when contact has only name and id', () => {
@@ -72,4 +76,5 @@ it('should present a list of 2 contacts', () => {
     const contact2 = screen.getByText('Chico Cunha');
     expect(contact2).toBeInTheDocument();
 });
+
 

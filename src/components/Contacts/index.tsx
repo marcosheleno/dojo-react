@@ -5,7 +5,7 @@ const ContactsList = ({ contacts }: { contacts?: Contact[] }) => {
     if (!contacts || !contacts.length) {
         return (
             <div>
-                <p data-testid='contacts'>Nenhum contato encontrado</p>
+                <p data-testid="contacts">Nenhum contato encontrado</p>
             </div>
         );
     }

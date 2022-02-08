@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import ContactsList from '../../../../components/Contacts';
 import Contact from '../../../../models/contact';
 import { Card } from '..';
 
@@ -9,8 +8,8 @@ it('should present a message when contact has no id', () => {
 
     render(<Card contact={mockContact} />);
 
-    const contacts = screen.getByText('Contato inválido');
-    expect(contacts).toBeInTheDocument();
+    const contact = screen.getByText('Contato inválido');
+    expect(contact).toBeInTheDocument();
 });
 
 it('should present a message when contact has no name', () => {
@@ -18,9 +17,8 @@ it('should present a message when contact has no name', () => {
     
     
     render(<Card contact={mockContact} />);
-    
-    const contacts = screen.getByText('Contato inválido');
-    expect(contacts).toBeInTheDocument();
+    const contact = screen.getByText('Contato inválido');
+    expect(contact).toBeInTheDocument();
 });
 
 it('should present a message when contact has only name and id', () => {
@@ -30,4 +28,5 @@ it('should present a message when contact has only name and id', () => {
     
     const contacts = screen.getByText('Contato teste');
     expect(contacts).toBeInTheDocument();
+    
 });
