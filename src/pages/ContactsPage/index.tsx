@@ -4,6 +4,7 @@ import Contact from '../../models/contact';
 import {} from './styles';
 import ContactsList from '../../components/Contacts';
 
+const mockContact: Contact[] = [{ id: 1, name: 'Contato teste' }];
 export default function ContactsPage() {
-    return <ContactsList></ContactsList>;
+    return <ContactsList contacts={mockContact}></ContactsList>;
 }

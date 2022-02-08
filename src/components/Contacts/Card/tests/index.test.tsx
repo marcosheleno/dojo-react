@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Contact, {Phone} from '../../../../models/contact';
+import Contact, {Email, Phone} from '../../../../models/contact';
 import { Card } from '..';
 
 it('should present a message when contact has no id', () => {
@@ -57,6 +57,7 @@ it('Groups should be empty if contact has no groups', () => {
     render(<Card contact={mockContact} />);
     
     const phonesParent = screen.getByText('Grupos').parentElement;
+
     expect(phonesParent?.childElementCount).toBeLessThan(2);
 });
 
@@ -68,3 +69,26 @@ it('LeftWrapper must contain comma separated groups when they exist', () => {
     const contact1 = screen.getByText('familia, trabalho');
     expect(contact1).toBeInTheDocument();
 });
+
+it('Emails should be empty if contact has no emails', () => {
+    const mockContact: Contact = { id: 1, name: 'Contato teste' };
+
+    render(<Card contact={mockContact} />);
+    
+    const phonesParent = screen.getByText('Emails').parentElement;
+    expect(phonesParent?.childElementCount).toBeLessThan(2);
+})
+
+it('LeftWrapper must contain comma separated emails when they exist', () => {
+    const mockEmails:Email  = {
+        email: "abominavel.homem.neves@familia.snow",
+        tipo: "comercial"
+    }
+    const mockContact: Contact = { id: 1, name: 'Contato teste', emails: [mockEmails] };
+
+    render(<Card contact={mockContact} />);
+    
+    const contact1 = screen.getByText('abominavel.homem.neves@familia.snow (comercial)');
+    expect(contact1).toBeInTheDocument();
+});
+
