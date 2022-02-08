@@ -23,10 +23,10 @@ it('should present a message when contact has no id', () => {
     render(<ContactsList contacts={mockData} />);
 
     const contacts = screen.getByText('Contato inválido');
+    const parent = screen.getByText('Contato inválido').parentElement;
+    
     expect(contacts).toBeInTheDocument();
-
-    const content = screen.getByText('Contato inválido').parentElement
-    expect(content?.tagName).toBe("ARTICLE")
+    expect(parent?.tagName).toBe("ARTICLE")
 });
 
 it('should present a message when contact has no name', () => {
@@ -40,8 +40,10 @@ it('should present a message when contact has no name', () => {
     render(<ContactsList contacts={mockData} />);
     
     const contacts = screen.getByText('Contato inválido');
+    const parent = screen.getByText('Contato inválido').parentElement;
     expect(contacts).toBeInTheDocument();
-    expect(contacts).toContainHTML('<p>Contato inválido</p>');
+    
+    expect(parent?.tagName).toBe("ARTICLE")
 });
 
 it('should present a message when contact has only name and id', () => {

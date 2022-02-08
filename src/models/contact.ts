@@ -1,15 +1,15 @@
-interface Phone {
+export interface Phone {
     phone?: number
     ddi?: number
     type?: string
 }
 
-interface Email{
+export interface Email{
     email?:string
     tipo?: string
 }
 
-interface Contact {
+export interface Contact {
     id?: number
     name?: string
     group?: string[]
