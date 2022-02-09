@@ -13,6 +13,10 @@ export interface TAction {
   payload: number;
 }
 
+export interface TPageState{
+  id: number;
+}
+
 const reducers = (state: IInitalState = INITIAL_STATE, action: TAction) => {
   switch (action.type) {
     case UPDATE_PAGE:
