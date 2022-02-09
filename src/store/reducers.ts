@@ -1,14 +1,13 @@
 import { combineReducers } from 'redux';
-
+import { pageReducer } from './contacts';
+import { TPageState } from './contacts/pageReducer';
 
 export type TReducers = {
-//   catalogo: TCatalogoState;
-
+  id: TPageState;
 };
 
 const reducers = combineReducers({
-//   catalogo: catalogoReducer ,
-  
+  page: pageReducer,
 });
 
 export default reducers;
