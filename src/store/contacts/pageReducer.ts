@@ -1,31 +1,28 @@
-import { ATUALIZAR_TOTAL } from './totalActions';
-
-
-const INITIAL_STATE: IInitalState = {
-  totals: null,
-};
+import { UPDATE_PAGE } from './pageActions';
 
 export interface IInitalState {
-  totals: number;
+  id?: number;
 }
+
+const INITIAL_STATE: IInitalState = {
+  id: undefined,
+};
 
 export interface TAction {
   type: string;
   payload: number;
 }
 
-export interface TTotalState {
-  totals: number;
-}
-
-export default (state: IInitalState = INITIAL_STATE, action: TAction) => {
+const reducers = (state: IInitalState = INITIAL_STATE, action: TAction) => {
   switch (action.type) {
-    case ATUALIZAR_TOTAL:
+    case UPDATE_PAGE:
       return {
         ...state,
-        totals: action.payload,
+        id: action.payload,
       };
     default:
       return state;
   }
 };
+
+export default reducers;
