@@ -12,7 +12,7 @@ export const Phones: React.FC<{ phones?: Phone[] }> = ({ phones }) => {
     }
     return (
         <>
-            <H2>Telefones</H2>;
+            <H2>Telefones</H2>
             {phones && (
                 <NoDots>
                     {phones.map((phone) => {

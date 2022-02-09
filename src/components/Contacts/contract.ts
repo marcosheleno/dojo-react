@@ -6,7 +6,7 @@ export interface Phone {
 
 export interface Email{
     email?:string
-    tipo?: string
+    type?: string
 }
 
 export interface Contact {

@@ -10,7 +10,7 @@ export const Group: React.FC<{ group?: string[] }> = ({ group }) => {
     }
     return (
         <>
-            <H2>Grupos</H2>;
+            <H2>Grupos</H2>
             <OverflowedParagraph>{group.join(', ')}</OverflowedParagraph>
         </>
     );

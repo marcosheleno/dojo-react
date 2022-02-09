@@ -3,7 +3,7 @@ import { Email } from '../../contract';
 
 const buildString = (emails: Email[]) => {
     const emailsT = emails.map((email: Email) => {
-        return `${email.email} (${email.tipo})`;
+        return `${email.email} (${email.type})`;
     });
     const emailsString = emailsT.join(', ');
     return emailsString;
@@ -19,7 +19,7 @@ export const Emails: React.FC<{ emails?: Email[] }> = ({ emails }) => {
     }
     return (
         <>
-            <H2>Emails</H2>;
+            <H2>Emails</H2>
             <OverflowedParagraph>{buildString(emails)}</OverflowedParagraph>
         </>
     );

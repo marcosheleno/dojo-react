@@ -82,7 +82,7 @@ it('Emails should be empty if contact has no emails', () => {
 it('LeftWrapper must contain comma separated emails when they exist', () => {
     const mockEmails:Email  = {
         email: "abominavel.homem.neves@familia.snow",
-        tipo: "comercial"
+        type: "comercial"
     }
     const mockContact: Contact = { id: 1, name: 'Contato teste', emails: [mockEmails] };
 
