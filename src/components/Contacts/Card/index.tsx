@@ -40,7 +40,7 @@ export const Card: React.FC<{ contact: Contact }> = ({ contact }) => {
     }
 
     return (
-        <CardStyle>
+        <CardStyle onClick={() => {}}>
             <H1>{contact.name}</H1>
             <ContentWraper>
                 <LeftWraper>

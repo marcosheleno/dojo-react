@@ -1,22 +1,25 @@
-import React from "react";
+import React from 'react';
+import { TMessage } from '../Messages/contract';
+import Message from './Message';
 
-const MessagesList = ({ messages }: { messages?: String[] }) => {
-  if (!messages) {
-    messages = [];
-    messages.push("Oi, gostaria de falar uma coisa contigo!");
-  }
+const MessagesList = ({ messages }: { messages?: TMessage[] }) => {
+    if (!messages) {
+        const message = {
+            body: 'Oi, gostaria de falar uma coisa contigo!',
+            date: new Date(),
+        };
+        messages = [message];
+    }
 
-  return (
-    <>
-      {messages.map((message) => {
-        return (
-          <div>
-            <p>{message}</p>
-          </div>
-        );
-      })}
-    </>
-  );
+    return (
+        <>
+            {messages.map((message) => {
+                return (
+                    <Message message={message} />
+                );
+            })}
+        </>
+    );
 };
 
 export default MessagesList;

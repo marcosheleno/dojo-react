@@ -1,7 +1,7 @@
 import React from "react";
-import {TMessage} from "../contract"
+import {TMessage} from "../contract";
 
-const Message = ({ message }: { message?: TMessage }) => {
+const Message = ({ message }: { message: TMessage }) => {  
   return (
     <div>
       <p>{message.body}</p>
