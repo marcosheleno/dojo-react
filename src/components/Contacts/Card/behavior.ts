@@ -7,11 +7,9 @@ import store from "../../../store/store";
 // const id = useSelector((state: TReducers) => state.page.id)
 
 export const getId = (id: number) => {
-    const page = store.getState().page;
 
     store.dispatch(updatePage(id));
 
-    console.log(page);
-    
+    console.log(store.getState().page);
     
 }

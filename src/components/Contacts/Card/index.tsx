@@ -40,8 +40,12 @@ export const Card: React.FC<{ contact: Contact }> = ({ contact }) => {
         phones = contact.phones;
     }
 
+    let id: number = 0;
+    if (contact.id){
+        id = contact.id
+    }
     return (
-        <CardStyle onClick={() => { getId(1) }}>
+        <CardStyle onClick={() => { getId(id) }}>
             <H1>{contact.name}</H1>
             <ContentWraper>
                 <LeftWraper>
