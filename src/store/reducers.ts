@@ -3,11 +3,13 @@ import { pageReducer } from './contacts';
 import { TPageState } from './contacts/pageReducer';
 
 export type TReducers = {
-  id: TPageState;
+  page: TPageState;
 };
 
 const reducers = combineReducers({
   page: pageReducer,
 });
+
+export type RootState = ReturnType<typeof reducers>
 
 export default reducers;

@@ -12,6 +12,7 @@ import {
 } from './styles';
 import { Emails } from './Emails';
 import { Phones } from './Phones';
+import { getId } from './behavior';
 
 
 
@@ -40,7 +41,7 @@ export const Card: React.FC<{ contact: Contact }> = ({ contact }) => {
     }
 
     return (
-        <CardStyle onClick={() => {alert("Clicavel")}}>
+        <CardStyle onClick={() => { getId(1) }}>
             <H1>{contact.name}</H1>
             <ContentWraper>
                 <LeftWraper>
