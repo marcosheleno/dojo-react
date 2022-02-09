@@ -6,7 +6,7 @@ import MessageBox from '../../../components/Messages/MessageBox';
 
 describe('when no messages are available', () => {
     it('show a default message', () => {
-        render(<MessagesList />);
+        render(<MessagesList messages={[]}/>);
         const noMessages = screen.getByText(
             'Oi, gostaria de falar uma coisa contigo!'
         );
