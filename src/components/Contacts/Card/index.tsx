@@ -1,6 +1,6 @@
 import { group } from 'console';
 import React from 'react';
-import Contact from '../contract';
+import Contact, { Email, Phone } from '../contract';
 import { H1, H2, NoDots, OverflowedParagraph } from '../../../styles/styles';
 import { Group } from './Group';
 import {
@@ -11,6 +11,7 @@ import {
     Number,
 } from './styles';
 import { Emails } from './Emails';
+import { Phones } from './Phones';
 
 
 
@@ -27,6 +28,17 @@ export const Card: React.FC<{ contact: Contact }> = ({ contact }) => {
     if (contact.group) {
         grupo = contact.group;
     }
+
+    let emails: Email[] = [];
+    if (contact.emails) {
+        emails = contact.emails;
+    }
+
+    let phones: Phone[] = [];
+    if (contact.phones) {
+        phones = contact.phones;
+    }
+
     return (
         <CardStyle>
             <H1>{contact.name}</H1>
@@ -36,22 +48,11 @@ export const Card: React.FC<{ contact: Contact }> = ({ contact }) => {
                         <Group group={grupo}></Group>
                     </div>
                     <div>
-                        <Emails emails={contact.emails} />
+                        <Emails emails={emails} />
                     </div>
                 </LeftWraper>
                 <PhoneWrapper>
-                    <H2>Telefones</H2>
-                    {contact.phones && (
-                        <NoDots>
-                            {contact.phones.map((phone) => {
-                                return (
-                                    <Number>
-                                        {phone.type} +{phone.ddi} {phone.phone}
-                                    </Number>
-                                );
-                            })}
-                        </NoDots>
-                    )}
+                    <Phones phones = {phones}></Phones>
                 </PhoneWrapper>
             </ContentWraper>
         </CardStyle>

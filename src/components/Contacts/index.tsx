@@ -1,5 +1,6 @@
 import Contact from './contract';
 import { Card } from './Card';
+import React from 'react';
 
 const ContactsList = ({ contacts }: { contacts?: Contact[] }) => {
     if (!contacts || !contacts.length) {
@@ -13,7 +14,7 @@ const ContactsList = ({ contacts }: { contacts?: Contact[] }) => {
     return (
         <>
             {contacts.map((contact) => {
-                return <Card contact={contact}></Card>;
+                return <Card contact={contact} key = {contact.id}></Card>;
             })}
         </>
     );
