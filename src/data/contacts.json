@@ -1,36 +1,36 @@
 [
     {
         "id": 10,
-        "nome": "João das Neves",
-        "grupos": [
+        "name": "João das Neves",
+        "group": [
             "familia neves"
         ],
-        "telefones": [
+        "phones": [
             {
-                "numero": 456465456,
+                "phone": 456465456,
                 "ddi": 55,
-                "tipo": "residencial"
+                "type": "residencial"
             }
         ]
     },
     {
         "id": 15,
-        "nome": "Branc de Neves",
-        "grupos": [
+        "name": "Branc de Neves",
+        "group": [
             "familia neves"
         ],
-        "telefones": [
+        "phones": [
             {
-                "numero": 56498412398,
+                "phone": 56498412398,
                 "ddi": 1,
-                "tipo": "celular"
+                "type": "celular"
             }
         ]
     },
     {
         "id": 10,
-        "nome": "Abominável Homem das Neves",
-        "grupos": [
+        "name": "Abominável Homem das Neves",
+        "group": [
             "familia neves"
         ],
         "emails": [
@@ -39,11 +39,11 @@
                 "tipo": "comercial"
             }
         ],
-        "telefones": [
+        "phones": [
             {
-                "numero": 54516885,
+                "phone": 54516885,
                 "ddi": 55,
-                "tipo": "fax"
+                "type": "fax"
             }
         ]
     }
