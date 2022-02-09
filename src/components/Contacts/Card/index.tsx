@@ -10,14 +10,9 @@ import {
     PhoneWrapper,
     Number,
 } from './styles';
+import { Emails } from './Emails';
 
-const tratamento = (emails: any) => {
-    const emailsT = emails.map((email: any) => {
-        return `${email.email} (${email.tipo})`;
-    });
-    const emailsString = emailsT.join(', ');
-    return emailsString;
-};
+
 
 export const Card: React.FC<{ contact: Contact }> = ({ contact }) => {
     if (!contact.name || !contact.id) {
@@ -41,12 +36,7 @@ export const Card: React.FC<{ contact: Contact }> = ({ contact }) => {
                         <Group group={grupo}></Group>
                     </div>
                     <div>
-                        <H2>Emails</H2>
-                        {contact.emails && (
-                            <OverflowedParagraph>
-                                {tratamento(contact.emails)}
-                            </OverflowedParagraph>
-                        )}
+                        <Emails emails={contact.emails} />
                     </div>
                 </LeftWraper>
                 <PhoneWrapper>
