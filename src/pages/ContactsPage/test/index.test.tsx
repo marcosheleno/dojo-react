@@ -13,7 +13,6 @@ it('when no contacts are provided, present "Nenhum contato encontrado" error', (
 });
 
 it('should present a message when contact has no id', () => {
-
   const mockContact:Contact = {name: 'Teste'};
 
     const mockData = [

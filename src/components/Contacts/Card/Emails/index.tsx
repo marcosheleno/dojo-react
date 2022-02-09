@@ -11,7 +11,11 @@ const buildString = (emails: Email[]) => {
 
 export const Emails: React.FC<{ emails?: Email[] }> = ({ emails }) => {
     if (!emails || !emails.length) {
-        return <H2>Emails</H2>;
+        return (
+            <>
+                <H2>Emails</H2>
+            </>
+        );
     }
     return (
         <>
