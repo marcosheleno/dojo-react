@@ -1,4 +1,4 @@
-import Contact from '../../models/contact';
+import Contact from './contract';
 import { Card } from './Card';
 
 const ContactsList = ({ contacts }: { contacts?: Contact[] }) => {

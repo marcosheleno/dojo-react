@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import ContactsList from '../../../components/Contacts';
-import Contact from '../../../models/contact'
+import Contact from '../../../components/Contacts/contract'
 
 it('when no contacts are provided, present "Nenhum contato encontrado" error', () => {
     render(<ContactsList />);

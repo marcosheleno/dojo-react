@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Contact, {Email, Phone} from '../../../../models/contact';
+import Contact, {Email, Phone} from '../../contract';
 import { Card } from '..';
 
 it('should present a message when contact has no id', () => {

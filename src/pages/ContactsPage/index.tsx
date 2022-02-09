@@ -1,5 +1,5 @@
 import React from 'react';
-import Contact from '../../models/contact';
+import Contact from '../../components/Contacts/contract';
 
 import {} from './styles';
 import ContactsList from '../../components/Contacts';

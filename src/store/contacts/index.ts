@@ -1,5 +1,5 @@
 import { createStore} from 'redux'
-import Contact from '../../models/contact'
+import Contact from '../../components/Contacts/contract'
 
 const data:Contact = {};
 
