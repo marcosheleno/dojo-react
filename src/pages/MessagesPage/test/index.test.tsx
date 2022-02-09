@@ -5,12 +5,8 @@ import MessagesList from '../../../components/Messages';
 describe('when no messages are available', () => {
     it('show a default message', () => {
         render(<MessagesList />);
-        const noMessages = screen.getByTestId(/no-messages/i);
-
+        const noMessages = screen.getByText('Oi, gostaria de falar uma coisa contigo!');
         expect(noMessages).toBeInTheDocument();
-        expect(noMessages).toHaveTextContent(
-            'Oi, gostaria de falar uma coisa contigo!'
-        );
     });
 });
 
