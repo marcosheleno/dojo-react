@@ -6,7 +6,6 @@ import { ADD_MESSAGE, TChat } from "./store";
 
 export function useMessageList(contactId: number) {
     const chats = useSelector((state: TReducers) => state.messages);
-    console.info(chats.chats, contactId);
     const foundChats = chats.chats.filter((chat: TChat, key: number) => {
         return chat.id == contactId;
     })
@@ -14,6 +13,7 @@ export function useMessageList(contactId: number) {
 
     if (!foundChat) {
         addMessage(contactId, 'oi');
+        //corrigir
         return [];
     }
 

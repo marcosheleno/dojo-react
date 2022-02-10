@@ -39,7 +39,7 @@ const reducers = (state: IInitalState = INITIAL_STATE, action: TAction) => {
             const foundChats = state.chats.filter((chat: TChat, key: number) => {
                 return chat.id == action.payload.id
             });
-            let foundChat = foundChats.shift();
+            const foundChat = foundChats.shift();
             if (!foundChat) {
                 state.chats.push({
                     id: action.payload.id,
