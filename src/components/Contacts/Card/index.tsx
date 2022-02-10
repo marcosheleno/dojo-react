@@ -41,7 +41,7 @@ export const Card: React.FC<{ contact: Contact }> = ({ contact }) => {
     }
 
     let id: number = 0;
-    if (contact.id){
+    if (contact.id) {
         id = contact.id
     }
     return (
@@ -57,7 +57,7 @@ export const Card: React.FC<{ contact: Contact }> = ({ contact }) => {
                     </div>
                 </LeftWraper>
                 <PhoneWrapper>
-                    <Phones phones = {phones}></Phones>
+                    <Phones phones={phones}></Phones>
                 </PhoneWrapper>
             </ContentWraper>
         </CardStyle>
