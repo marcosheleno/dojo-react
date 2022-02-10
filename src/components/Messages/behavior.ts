@@ -8,8 +8,6 @@ export function useMessageList(contactId: number) {
     const id = useSelector((state: TReducers) => state.page.id);
     const messages: Array<TMessage> = [];
 
-
-    
     if (!messages.length) {
         const message: TMessage = {
             body: "Oi, gostaria de falar uma coisa contigo!",
@@ -19,14 +17,11 @@ export function useMessageList(contactId: number) {
     }
 
     console.log(messages);
-    /*
-        const messages2 = useSelector((state: TReducers) => state.messages);
-        if (!messages2.length) {
-            addMessage(id, "Oi, gostaria de falar uma coisa contigo!");
-            addMessage(id, "Oi, gostaria de falar uma coisa contigo!2");
-    
-        }
-    */
+
+    const stateMessages = useSelector((state: TReducers) => state.messages);
+    if (!stateMessages.length) {
+        addMessage(id, "Oi, gostaria de falar uma coisa contigo!");
+    }
 
     return messages;
 }
@@ -53,5 +48,6 @@ export const addMessage = (contactId: number, body: string, date?: Date) => {
         body: body,
         date: new Date()
     }
+
     store.dispatch(persistMessage(contactId, message));
 }

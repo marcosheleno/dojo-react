@@ -4,9 +4,16 @@ import MessageBox from '../../components/Messages/MessageBox';
 import { useMessageList } from '../../components/Messages/behavior';
 import { TMessage } from '../../components/Messages/contract';
 import BackButton from '../../components/BackButton';
+import { useEffect } from 'react';
 
 export default function MessagesPage({ contactId }: { contactId: number }) {
-    const messages: Array<TMessage> = useMessageList(contactId);
+    let messages: Array<TMessage> = [];
+
+    useEffect(() => {
+        messages = useMessageList(contactId);
+
+    }, []);
+
 
     return (
         <>

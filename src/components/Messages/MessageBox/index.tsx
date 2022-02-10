@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { TMessage } from '../contract';
 import { addMessage } from '../behavior'
 import { useDispatch, useSelector } from 'react-redux'
 import { TReducers } from '../../../store/reducers';
@@ -10,18 +9,17 @@ const MessageBox = () => {
     const dispatch = useDispatch();
     const handleSubmit = (event: React.SyntheticEvent) => {
         event.preventDefault();
-        dispatch(addMessage(currentId,messageText));
+        addMessage(currentId,messageText);
         setMessageText('');
     }
 
     const handleMessageChange = (event: any) => {
-        console.log(messageText)
         setMessageText(event.target.value);
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <textarea data-testid="message-box" value={messageText} onChange={() => handleMessageChange}></textarea>
+            <textarea data-testid="message-box" value={messageText} onChange={handleMessageChange}></textarea>
             <button data-testid="message-send">Enviar</button>
         </form>
     );
