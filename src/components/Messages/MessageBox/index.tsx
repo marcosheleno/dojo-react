@@ -1,20 +1,27 @@
 import React, { useState } from 'react';
 import { TMessage } from '../contract';
+import { addMessage } from '../behavior'
+import { useDispatch, useSelector } from 'react-redux'
+import { TReducers } from '../../../store/reducers';
 
 const MessageBox = () => {
-    const [message, setMessage] = useState('');
-
+    const [messageText, setMessageText] = useState('');
+    const currentId = useSelector((state: TReducers) => state.page.id);
+    const dispatch = useDispatch();
     const handleSubmit = (event: React.SyntheticEvent) => {
         event.preventDefault();
+        dispatch(addMessage(currentId,messageText));
+        setMessageText('');
     }
 
-    const handleMessageChange = (event) => {
-        setMessage(event.current.value);
+    const handleMessageChange = (event: any) => {
+        console.log(messageText)
+        setMessageText(event.target.value);
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <textarea data-testid="message-box" value={message} onChange={(val) => {}}></textarea>
+            <textarea data-testid="message-box" value={messageText} onChange={() => handleMessageChange}></textarea>
             <button data-testid="message-send">Enviar</button>
         </form>
     );
