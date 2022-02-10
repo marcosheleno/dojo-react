@@ -27,12 +27,17 @@ export interface TPageState {
 const reducers = (state: IInitalState = INITIAL_STATE, action: TAction) => {
     switch (action.type) {
         case ADD_MESSAGE:
-            // const chatIndex = state.chats?.findIndex(chat => chat.id === action.payload.id);
+            const chatObj = state.chats?.find(chat => chat.id === action.payload.id);
+            const chatIndex = state.chats?.findIndex(chat => chat.id === action.payload.id);
+            chatObj?.messages.concat(action.payload.messages)
 
+            
+            if(chatIndex){
+                console.log(state.chats)
+            }
             return {
                 ...state,
                 ...{
-                    id: action.payload.id,
                     chats: state.chats?.concat(action.payload)
                 }
             };
