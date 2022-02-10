@@ -1,4 +1,4 @@
 export interface TMessage {
-    body?: string;
-    date?: Date;
-  }
+  body: string;
+  date: Date;
+}

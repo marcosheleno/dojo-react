@@ -2,9 +2,9 @@ import { TMessage } from "../contract";
 export const ADD_MESSAGE = 'ADD_MESSAGE';
 
 export interface IInitalState {
-    chats: TChats[]
+    chats: TChat[]
 }
-export interface TChats {
+export interface TChat {
     id: number
     messages: TMessage[]
 }
@@ -17,41 +17,41 @@ const INITIAL_STATE: IInitalState = {
 
 export interface TAction {
     type: string;
-    payload: TChats;
-}
-
-export interface TPageState {
-    id: number;
+    payload: {
+        id: number,
+        message: TMessage
+    }
 }
 
 const reducers = (state: IInitalState = INITIAL_STATE, action: TAction) => {
     switch (action.type) {
         case ADD_MESSAGE:
-
-            if (!state) {
-                state = INITIAL_STATE
+            if (!state.chats.length) {
+                state.chats.push({
+                    id: action.payload.id,
+                    messages: [
+                        action.payload.message
+                    ]
+                });
+                return state;
             }
 
-            const chatNew = state.chats.filter((chat: TChats, key: number) => {
+            const foundChats = state.chats.filter((chat: TChat, key: number) => {
                 return chat.id == action.payload.id
             });
-
-            let chatNew2 = chatNew.shift();
-
-            if (!chatNew2) {
-                return { ...state, chats: state.chats?.concat(action.payload) };
+            let foundChat = foundChats.shift();
+            if (!foundChat) {
+                state.chats.push({
+                    id: action.payload.id,
+                    messages: [
+                        action.payload.message
+                    ]
+                });
+                return state;
             }
+            foundChat.messages.push(action.payload.message);
 
-            console.info(chatNew2);
-            const message = action.payload.messages.shift();
-            console.info(message);
-
-            return { ...state, chats: state.chats?.concat(action.payload) };
-
-            return {
-                ...state,
-                chats: state.chats?.concat(action.payload)
-            };
+            return state;
         default:
             return state;
     }

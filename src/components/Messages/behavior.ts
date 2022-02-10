@@ -2,37 +2,32 @@ import { useSelector } from "react-redux";
 import { TReducers } from "../../store/reducers";
 import { TMessage } from "./contract";
 import store from "../../store/store";
-import { ADD_MESSAGE, TChats } from "./store";
+import { ADD_MESSAGE, TChat } from "./store";
 
 export function useMessageList(contactId: number) {
-    const id = useSelector((state: TReducers) => state.page.id);
-    
-    const messages: Array<TMessage> = [];
+    const chats = useSelector((state: TReducers) => state.messages);
+    console.info(chats.chats, contactId);
+    const foundChats = chats.chats.filter((chat: TChat, key: number) => {
+        return chat.id == contactId;
+    })
+    const foundChat = foundChats.shift();
 
-    if (!messages.length) {
-        const message: TMessage = {
-            body: "Oi, gostaria de falar uma coisa contigo!",
-            date: new Date()
-        }
-        messages.push(message);
+    if (!foundChat) {
+        addMessage(contactId, 'oi');
+        return [];
     }
-    
 
-    // const stateMessages = useSelector((state: TReducers) => state.messages.map((chat) =>chat.id === contactId);
-    
-    // return stateMessages;
+
+    return foundChat.messages;
 }
 
 const persistMessage = (contactId: number, message: TMessage) => {
-    const chat: TChats = {
-        id: contactId,
-        messages: [
-            message
-        ]
-    }
     return {
         type: ADD_MESSAGE,
-        payload: chat,
+        payload: {
+            id: contactId,
+            message: message
+        },
     };
 };
 

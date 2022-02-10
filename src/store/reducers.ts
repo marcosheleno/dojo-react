@@ -5,7 +5,7 @@ import { default as messageReducer, IInitalState } from '../components/Messages/
 
 export type TReducers = {
   page: TPageState,
-  messages: IInitalState[]
+  messages: IInitalState
 };
 
 const reducers = combineReducers({
