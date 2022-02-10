@@ -25,6 +25,7 @@ export interface TPageState {
 }
 
 const reducers = (state: IInitalState = INITIAL_STATE, action: TAction) => {
+    console.log("ADD_MESSAGE" === action.type)
     switch (action.type) {
         case ADD_MESSAGE:
             console.info("Enter ADD_MESSAGE", state)

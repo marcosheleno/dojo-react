@@ -6,6 +6,7 @@ import { ADD_MESSAGE, TChats } from "./store";
 
 export function useMessageList(contactId: number) {
     const id = useSelector((state: TReducers) => state.page.id);
+    
     const messages: Array<TMessage> = [];
 
     if (!messages.length) {
