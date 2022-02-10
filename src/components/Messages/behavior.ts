@@ -19,11 +19,12 @@ export function useMessageList(contactId: number) {
     console.log(messages);
 
     const stateMessages = useSelector((state: TReducers) => state.messages);
-    if (!stateMessages.length) {
-        addMessage(id, "Oi, gostaria de falar uma coisa contigo!");
-    }
+    // if (!stateMessages.length) {
+    //     addMessage(id, "Oi, gostaria de falar uma coisa contigo!");
+    // }
 
-    return messages;
+
+    return stateMessages;
 }
 
 const persistMessage = (contactId: number, message: TMessage) => {
@@ -41,6 +42,7 @@ const persistMessage = (contactId: number, message: TMessage) => {
 
 
 export const addMessage = (contactId: number, body: string, date?: Date) => {
+    console.info("add message")
     if (!date) {
         date = new Date()
     }

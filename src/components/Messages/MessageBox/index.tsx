@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { TReducers } from '../../../store/reducers';
 
 const MessageBox = () => {
+    console.info("Message box")
     const [messageText, setMessageText] = useState('');
     const currentId = useSelector((state: TReducers) => state.page.id);
     const dispatch = useDispatch();

@@ -27,7 +27,7 @@ export interface TPageState {
 const reducers = (state: IInitalState = INITIAL_STATE, action: TAction) => {
     switch (action.type) {
         case ADD_MESSAGE:
-            console.info(state)
+            console.info("Enter ADD_MESSAGE", state)
 
             return { ...state, chats: action.payload };
         default:
