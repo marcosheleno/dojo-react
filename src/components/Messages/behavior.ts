@@ -16,14 +16,11 @@ export function useMessageList(contactId: number) {
         }
         messages.push(message);
     }
+    
 
-    const stateMessages = useSelector((state: TReducers) => state.messages);
-    // if (!stateMessages.length) {
-    //     addMessage(id, "Oi, gostaria de falar uma coisa contigo!");
-    // }
-
-
-    return stateMessages;
+    // const stateMessages = useSelector((state: TReducers) => state.messages.map((chat) =>chat.id === contactId);
+    
+    // return stateMessages;
 }
 
 const persistMessage = (contactId: number, message: TMessage) => {
