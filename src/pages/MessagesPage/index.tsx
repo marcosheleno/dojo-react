@@ -7,7 +7,8 @@ import BackButton from '../../components/BackButton';
 import { useEffect } from 'react';
 
 export default function MessagesPage({ contactId }: { contactId: number }) {
-    let messages: Array<TMessage> = [];
+    
+    let messages: Array<TMessage> = useMessageList(contactId);
     
     // useEffect(() => {
     //     messages = useMessageList(contactId);
