@@ -30,7 +30,7 @@ const reducers = (state: IInitalState = INITIAL_STATE, action: TAction) => {
         case ADD_MESSAGE:
             console.info("Enter ADD_MESSAGE", state)
 
-            return { ...state, chats: action.payload };
+            return { ...state, chats: state.chats?.concat(action.payload) };
         default:
             return state;
     }

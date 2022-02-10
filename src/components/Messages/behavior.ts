@@ -43,7 +43,6 @@ const persistMessage = (contactId: number, message: TMessage) => {
 
 
 export const addMessage = (contactId: number, body: string, date?: Date) => {
-    console.info("add message")
     if (!date) {
         date = new Date()
     }
