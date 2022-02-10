@@ -3,8 +3,6 @@ import { Card } from './Card';
 import React from 'react';
 
 const ContactsList = ({ contacts }: { contacts?: Contact[] }) => {
-
-    console.log(contacts)
     if (!contacts || !contacts.length) {
         return (
             <div>

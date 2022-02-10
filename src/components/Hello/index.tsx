@@ -4,7 +4,6 @@ interface HelloProps {
 }
 
 const Hello = ({ originalName, name }: HelloProps) => {
-    console.info( originalName, name)
     return <div>
         <h1 data-testid="welcome">Hello, {name}!</h1>
     </div>;
