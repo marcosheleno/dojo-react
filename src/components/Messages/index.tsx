@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { TMessage } from "./contract";
 import Message from "./Message";
 
