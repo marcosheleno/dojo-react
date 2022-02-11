@@ -3,7 +3,11 @@ import { Email } from '../../contract';
 
 const buildString = (emails: Email[]) => {
     const emailsT = emails.map((email: Email) => {
-        return `${email.email} (${email.type})`;
+        let type = ""
+        if(email.type ){
+            type = ` (${email.type})`
+        }
+        return `${email.email}${type}`;
     });
     const emailsString = emailsT.join(', ');
     return emailsString;
