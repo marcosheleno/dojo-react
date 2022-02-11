@@ -1,4 +1,4 @@
-import { H2, NoDots, OverflowedParagraph } from '../../../../styles/styles';
+import { H2, NoDots } from '../../../../styles/styles';
 import { Phone } from '../../contract';
 import { Number } from '../styles';
 

@@ -4,6 +4,7 @@ import { TMessage } from '../../../components/Messages/contract';
 import MessagesList from '../../../components/Messages';
 import MessageBox from '../../../components/Messages/MessageBox';
 import { Provider } from 'react-redux';
+import store from '../../../store/store';
 
 describe('when no messages are available', () => {
     it('show a default message', () => {
