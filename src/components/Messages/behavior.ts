@@ -2,10 +2,11 @@ import { useSelector } from "react-redux";
 import { TReducers } from "../../store/reducers";
 import { TMessage } from "./contract";
 import store from "../../store/store";
-import { ADD_MESSAGE, TChat } from "./store";
+import { TChat } from "./store";
+import { persistMessage } from "../../store/chats/chatsActions";
 
 export function useMessageList(contactId: number) {
-    const chats = useSelector((state: TReducers) => state.messages);
+    const chats = useSelector((state: TReducers) => state.chats);
     const foundChats = chats.chats.filter((chat: TChat, key: number) => {
         return chat.id == contactId;
     })
@@ -16,19 +17,8 @@ export function useMessageList(contactId: number) {
         return [];
     }
 
-
     return foundChat.messages;
 }
-
-const persistMessage = (contactId: number, message: TMessage) => {
-    return {
-        type: ADD_MESSAGE,
-        payload: {
-            id: contactId,
-            message: message
-        },
-    };
-};
 
 
 export const addMessage = (contactId: number, body: string, date?: Date) => {
