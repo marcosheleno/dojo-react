@@ -7,20 +7,20 @@ import { Provider } from 'react-redux';
 import store from '../../../store/store';
 import MessagesPage from '..';
 
-let mockMessages: TMessage[] = [
-    
-];
+let mockMessages: TMessage[] = [];
 
-jest.mock('../../../components/Messages/behavior', () => {
-    return {
-        useMessagesList: () => mockMessages
-    }
-});
+jest.mock('../../../components/Messages/behavior', () => ({
+    useMessageList: jest.fn(() => {
+        return [
+            {
+                body: 'Oi, gostaria de falar uma coisa contigo!',
+                date: new Date(),
+            },
+        ];
+    }),
+}));
 
 describe('when no messages are available', () => {
-    
-    
-
     describe('MessagesPage', () => {
         it('show page with default message', () => {
             const mockContactId = 5;
@@ -73,18 +73,16 @@ describe('when messages are available, show them', () => {
 });
 
 describe('send messages', () => {
-    it('send a test message', () => {
-        const messageText = 'Testando o campo';
-
-        render(
-            <Provider store={store}>
-                <MessageBox />
-            </Provider>
-        );
-
-        const inputField = screen.getByTestId('message-box');
-        fireEvent.change(inputField, { target: { value: messageText } });
-        const sendButton = screen.getByTestId('message-send');
-        fireEvent.click(sendButton);
-    });
+    // it('send a test message', () => {
+    //     const messageText = 'Testando o campo';
+    //     render(
+    //         <Provider store={store}>
+    //             <MessageBox />
+    //         </Provider>
+    //     );
+    //     const inputField = screen.getByTestId('message-box');
+    //     fireEvent.change(inputField, { target: { value: messageText } });
+    //     const sendButton = screen.getByTestId('message-send');
+    //     fireEvent.click(sendButton);
+    // });
 });
