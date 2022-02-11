@@ -1,11 +1,12 @@
 export const namespaces = {
     pages: {
-      hello: "pages.hello",
+      contacts: "pages.contacts",
+      chat: "pages.chat",
     },
     common: "common",
   };
   
   export const languages = {
-    es: "es",
+    pt: "pt",
     en: "en",
   };
