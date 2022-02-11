@@ -51,7 +51,10 @@ const reducers = (state: IInitalState = INITIAL_STATE, action: TAction) => {
             }
             foundChat.messages.push(action.payload.message);
 
-            return state;
+            return {
+                ...state,
+                state
+            };
         default:
             return state;
     }

@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 
 export default function MessagesPage({ contactId }: { contactId: number }) {
 
-    let messages: any = useMessageList(contactId);
+    let messages: TMessage[] = useMessageList(contactId);
 
     return (
         <>

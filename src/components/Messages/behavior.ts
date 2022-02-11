@@ -12,8 +12,7 @@ export function useMessageList(contactId: number) {
     const foundChat = foundChats.shift();
 
     if (!foundChat) {
-        addMessage(contactId, 'oi');
-        //corrigir
+        addMessage(contactId, 'Oi, gostaria de falar uma coisa contigo!');
         return [];
     }
 
