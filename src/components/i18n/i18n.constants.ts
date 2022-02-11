@@ -6,6 +6,6 @@ export const namespaces = {
   };
   
   export const languages = {
-    es: "es",
+    pt: "pt",
     en: "en",
   };
