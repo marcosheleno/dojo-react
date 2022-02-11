@@ -1,57 +1,97 @@
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import { Phones } from '..';
-import { Phone } from '../../../contract';
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
+import { Phones } from "..";
+import { Phone } from "../../../contract";
 
-describe('Invalid Phones', () => {
-    it('if component doesnt receive any phones', () => {
-        render(<Phones />);
+describe("Invalid Phones", () => {
+  it("if component doesnt receive any phones", () => {
+    render(<Phones />);
 
-        const groupsParent = screen.getByText('Telefones').parentElement;
+    const groupsParent = screen.getByText("Telefones").parentElement;
 
-        expect(groupsParent?.childElementCount).toBeLessThan(2);
-    });
-    it('if component receives a phone with no ddi property', () => {
-        const mockPhones:Phone[] = [
-            {
-                type: 'comercial',
-                phone: 19999999999
-            }
-        ]
-        
-        render(<Phones phones={mockPhones}/>);
+    expect(groupsParent?.childElementCount).toBeLessThan(2);
+  });
+  
+  it("if component receives a phone object with only phone property", () => {
+    const mockPhones: Phone[] = [
+      {
+        phone: 19999999999,
+      },
+    ];
 
-        const groupsParent = screen.getByText('Telefones').parentElement;
+    render(<Phones phones={mockPhones} />);
 
-        expect(groupsParent?.childElementCount).toBeLessThan(2);
-    });
+    const phone = screen.getByText("19999999999");
+    expect(phone).toBeInTheDocument();
+  });
+  
+  it("if component receives a phone with no ddi property", () => {
+    const mockPhones: Phone[] = [
+      {
+        type: "comercial",
+        phone: 19999999999,
+      },
+    ];
+
+    render(<Phones phones={mockPhones} />);
+
+    const phone = screen.getByText("comercial 19999999999");
+    expect(phone).toBeInTheDocument();
+  });
+  it("if component receives a phone with no type property", () => {
+    const mockPhones: Phone[] = [
+      {
+        ddi: 55,
+        phone: 19999999999,
+      },
+    ];
+
+    render(<Phones phones={mockPhones} />);
+
+    const phone = screen.getByText("+55 19999999999");
+    expect(phone).toBeInTheDocument();
+  });
 });
 
-// describe('Valid Phones', () => {
-//     it('if component receives a single group', () => {
-//         const mockGroups: string[] = [
-//             'casa'
-//         ];
+describe('Valid Phones', () => {
+    it('if component receives a single complete phone object', () => {
+        const mockPhones: Phone[] = [
+            {
+              phone: 19999999999,
+              ddi: 55,
+              type: "comercial"
+            },
+          ];
 
-//         render(<Group group={mockGroups} />);
+        render(<Phones phones={mockPhones} />);
 
-//         const group = screen.getByText('casa');
+        const phone = screen.getByText('comercial +55 19999999999');
 
-//         expect(group).toBeInTheDocument();
-//     });
+        expect(phone).toBeInTheDocument();
+    });
 
-//     it('if component receives more than one group', () => {
-//         const mockGroups: string[] = [
-//             'casa',
-//             'trabalho'
-//         ];
+    it('if component receives more than one complete phone', () => {
+        const mockPhones: Phone[] = [
+            {
+              phone: 19999999999,
+              ddi: 55,
+              type: "comercial"
+            },
+            {
+                phone: 99999999999,
+                ddi: 44,
+                type: "residencial"
+              },
+          ];
 
-//         render(<Group group={mockGroups} />);
+        render(<Phones phones={mockPhones} />);
 
-//         const groups = screen.getByText(
-//             'casa, trabalho'
-//         );
+        const phone1 = screen.getByText('comercial +55 19999999999');
 
-//         expect(groups).toBeInTheDocument();
-//     });
-// });
+        expect(phone1).toBeInTheDocument();
+        
+        const phone2 = screen.getByText('residencial +44 99999999999');
+
+        expect(phone2).toBeInTheDocument();
+    });
+});
