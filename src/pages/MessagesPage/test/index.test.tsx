@@ -7,22 +7,23 @@ import { Provider } from 'react-redux';
 import store from '../../../store/store';
 import MessagesPage from '..';
 
+let mockMessages: TMessage[] = [
+    
+];
+
+jest.mock('../../../components/Messages/behavior', () => {
+    return {
+        useMessagesList: () => mockMessages
+    }
+});
+
 describe('when no messages are available', () => {
+    
+    
+
     describe('MessagesPage', () => {
         it('show page with default message', () => {
             const mockContactId = 5;
-            let mockMessages: TMessage[] = [
-                {
-                    body: 'Oi, gostaria de falar uma coisa contigo!',
-                    date: new Date(),
-                },
-            ];
-
-            jest.mock('../../../components/Messages/behavior', () => {
-                return jest.fn(() => ({
-                    messages: mockMessages,
-                }));
-            });
 
             render(
                 <Provider store={store}>
