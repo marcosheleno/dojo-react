@@ -6,7 +6,6 @@ import { TReducers } from '../../../store/reducers';
 const MessageBox = () => {
     const [messageText, setMessageText] = useState('');
     const currentId = useSelector((state: TReducers) => state.page.id);
-    const dispatch = useDispatch();
     const handleSubmit = (event: React.SyntheticEvent) => {
         event.preventDefault();
         addMessage(currentId,messageText);
