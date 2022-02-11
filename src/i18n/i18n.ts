@@ -10,13 +10,12 @@ const createI18n = (language: string): i18nInstance => {
     .use(HttpApi) // Use backend plugin for translation file download.
     .init({
       backend: {
-        loadPath: "./locales/{{lng}}/{{ns}}.json", // Specify where backend will find translation files.
+        loadPath: "../locales/{{lng}}/{{ns}}.json", // Specify where backend will find translation files.
       },
-      lng: language,
-      fallbackLng: language,
+      lng: 'pt',
+      fallbackLng: 'pt',
       ns: namespaces.common,
     });
-
   return i18n;
 };
 
