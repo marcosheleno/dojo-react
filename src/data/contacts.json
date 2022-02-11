@@ -2,9 +2,7 @@
     {
         "id": 10,
         "name": "João das Neves",
-        "group": [
-            "familia neves"
-        ],
+        "group": ["familia neves"],
         "phones": [
             {
                 "phone": 456465456,
@@ -16,9 +14,7 @@
     {
         "id": 15,
         "name": "Branc de Neves",
-        "group": [
-            "familia neves"
-        ],
+        "group": ["familia neves"],
         "phones": [
             {
                 "phone": 56498412398,
@@ -30,13 +26,11 @@
     {
         "id": 5,
         "name": "Abominável Homem das Neves",
-        "group": [
-            "familia neves"
-        ],
+        "group": ["familia neves"],
         "emails": [
             {
                 "email": "abominavel.homem.neves@familia.snow",
-                "tipo": "comercial"
+                "type": "comercial"
             }
         ],
         "phones": [
@@ -44,6 +38,55 @@
                 "phone": 54516885,
                 "ddi": 55,
                 "type": "fax"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Cachorro do vizinho",
+        "group": ["familia almeida", "rua", "grupo 3"],
+        "emails": [
+            {
+                "email": "doguinho@familia.snow",
+                "type": "comercial"
+            },
+            {
+                "email": "doguinho2@familia.snow",
+                "type": "comercial2"
+            },
+            {
+                "email": "doguinho3@familia.snow",
+                "type": "comercial3"
+            },
+            {
+                "email": "doguinho4@familia.snow",
+                "type": "comercial4"
+            },
+            {
+                "email": "doguinho5@familia.snow",
+                "type": "comercial5"
+            }
+        ],
+        "phones": [
+            {
+                "phone": 54516885,
+                "ddi": 55,
+                "type": "fax"
+            },
+            {
+                "phone": 54516886,
+                "ddi": 55,
+                "type": "fax2"
+            },
+            {
+                "phone": 54516887,
+                "ddi": 55,
+                "type": "fax3"
+            },
+            {
+                "phone": 54516888,
+                "ddi": 55,
+                "type": "fax4"
             }
         ]
     }

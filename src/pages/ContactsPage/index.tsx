@@ -1,13 +1,9 @@
-import React from 'react';
-import Contact from '../../components/Contacts/contract';
-
 import {} from './styles';
 import ContactsList from '../../components/Contacts';
-import {default as contactsJson} from "../../data/contacts.json";
+import { fetchContacts } from '../../services/contacts';
 
-const mockContact: Contact[] = contactsJson;
-
+const contacts = fetchContacts();
 
 export default function ContactsPage() {
-    return <ContactsList contacts={mockContact} />;
+    return <ContactsList contacts={contacts} />;
 }
