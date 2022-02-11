@@ -1,6 +1,5 @@
-import { TMessage } from "../contract";
-export const ADD_MESSAGE = 'ADD_MESSAGE';
-
+import { TMessage } from "../../components/Messages/contract";
+import { ADD_MESSAGE } from "./chatsActions"; //Change
 export interface IInitalState {
     chats: TChat[]
 }
@@ -58,6 +57,5 @@ const reducers = (state: IInitalState = INITIAL_STATE, action: TAction) => {
         default:
             return state;
     }
-};
-
+}
 export default reducers;
